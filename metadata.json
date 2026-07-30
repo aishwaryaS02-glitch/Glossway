@@ -1,0 +1,6 @@
+{
+  "name": "Glossway",
+  "description": "An AI-powered, exquisitely crafted language learning platform featuring interactive flashcards, AI tutoring, goal tracking, and vocabulary quizzes styled with an elegant, minimalist Editorial Aesthetic.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

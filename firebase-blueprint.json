@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "User profile containing XP, streak, and language progress",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The unique user ID" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "photoURL": { "type": "string", "description": "User profile picture URL" },
+        "createdAt": { "type": "integer", "description": "Creation timestamp in ms" },
+        "streak": { "type": "integer", "description": "Current learning streak in days" },
+        "wordsLearned": { "type": "integer", "description": "Total words learned by user" },
+        "sessions": { "type": "integer", "description": "Total sessions completed" },
+        "level": { "type": "integer", "description": "Current user level" },
+        "xp": { "type": "integer", "description": "Total experience points earned" },
+        "studyTime": { "type": "integer", "description": "Total study time in seconds" },
+        "dailyGoalMinutes": { "type": "integer", "description": "Daily goal in minutes" },
+        "completedDates": { "type": "array", "description": "List of dates with completed challenges" },
+        "languages": { "type": "object", "description": "Language-specific progress values" },
+        "premium": { "type": "boolean", "description": "Subscription status" },
+        "planId": { "type": "string", "description": "Current payment plan ID" },
+        "recentSearches": { "type": "array", "description": "List of user's last 5 search queries in the world dictionary" },
+        "notificationsEnabled": { "type": "boolean", "description": "Preference for receiving daily study session reminder push alerts" }
+      },
+      "required": ["uid", "email", "displayName", "createdAt", "streak", "wordsLearned", "sessions", "level", "xp"]
+    },
+    "message": {
+      "title": "Message",
+      "description": "A single chat message in the tutor conversation history",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "The content of the message" },
+        "sender": { "type": "string", "enum": ["user", "ai"], "description": "Sender role" },
+        "createdAt": { "type": "integer", "description": "Message timestamp in ms" },
+        "modelType": { "type": "string", "description": "Model used for AI generation" },
+        "groundingSources": { "type": "array", "description": "Live search citation metadata" }
+      },
+      "required": ["text", "sender", "createdAt"]
+    },
+    "flashcard": {
+      "title": "Flashcard",
+      "description": "A single flashcard for vocabulary practice, customizable by the user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Uniquely identifies the card" },
+        "word": { "type": "string", "description": "The word or expression in the target language" },
+        "translation": { "type": "string", "description": "The meaning/translation in English" },
+        "pronunciation": { "type": "string", "description": "Phonetic pronunciation guide" },
+        "exampleSentence": { "type": "string", "description": "Optional AI-generated or custom sentence in target language" },
+        "exampleTranslation": { "type": "string", "description": "Optional translation of the example sentence" },
+        "examplePronunciation": { "type": "string", "description": "Optional pronunciation of the example sentence" },
+        "language": { "type": "string", "description": "Language name (e.g. Kannada, Hindi, Spanish)" },
+        "level": { "type": "string", "description": "Difficulty tier (Beginner, Intermediate, Advanced)" },
+        "starred": { "type": "boolean", "description": "Whether the user starred this card" },
+        "createdAt": { "type": "integer", "description": "Card creation timestamp in ms" },
+        "custom": { "type": "boolean", "description": "Flag indicating if this is a custom user-created card" }
+      },
+      "required": ["word", "translation", "pronunciation", "language", "level", "starred"]
+    },
+    "quiz": {
+      "title": "Quiz",
+      "description": "Historical record of a quiz session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique quiz record ID" },
+        "languageId": { "type": "string", "description": "Language being tested" },
+        "score": { "type": "integer", "description": "Number of correct answers" },
+        "totalQuestions": { "type": "integer", "description": "Total questions in the quiz" },
+        "accuracy": { "type": "integer", "description": "Correct answer percentage" },
+        "completedAt": { "type": "integer", "description": "Completion timestamp in ms" }
+      },
+      "required": ["languageId", "score", "totalQuestions", "accuracy", "completedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "User profile record"
+    },
+    "/users/{userId}/messages/{messageId}": {
+      "schema": "message",
+      "description": "Tutor chat message history"
+    },
+    "/users/{userId}/flashcards/{flashcardId}": {
+      "schema": "flashcard",
+      "description": "User specific custom and seeded flashcards"
+    },
+    "/users/{userId}/quizzes/{quizId}": {
+      "schema": "quiz",
+      "description": "User specific quiz results and performance histories"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+/* --- NEW SLATE & INDIGO THEME OVERRIDES --- */
+@layer utilities {
+  .bg-\[\#FAF9F6\] { background-color: #0F172A !important; }
+  .bg-\[\#F5F2ED\] { background-color: #1E293B !important; }
+  .bg-white { background-color: #020617 !important; }
+  
+  .text-\[\#121212\] { color: #F8FAFC !important; }
+  .text-\[\#C5A880\] { color: #818CF8 !important; }
+  .text-black { color: #F8FAFC !important; }
+  
+  /* Handle text with opacities */
+  .text-\[\#12121250\] { color: rgba(248, 250, 252, 0.5) !important; }
+  .text-\[\#12121240\] { color: rgba(248, 250, 252, 0.4) !important; }
+  .text-\[\#12121260\] { color: rgba(248, 250, 252, 0.6) !important; }
+  .text-\[\#12121280\] { color: rgba(248, 250, 252, 0.8) !important; }
+  
+  /* Background opacities */
+  .bg-\[\#121212\] { background-color: #4F46E5 !important; color: #FFFFFF !important; border-color: #4F46E5 !important; }
+  .hover\:bg-\[\#121212\]:hover { background-color: #4338CA !important; }
+  .bg-black { background-color: #4F46E5 !important; color: #FFFFFF !important; border-color: #4F46E5 !important; }
+  .hover\:bg-black:hover { background-color: #4338CA !important; }
+
+  .bg-\[\#12121202\] { background-color: rgba(248, 250, 252, 0.02) !important; }
+  .bg-\[\#12121203\] { background-color: rgba(248, 250, 252, 0.03) !important; }
+  .bg-\[\#12121205\] { background-color: rgba(248, 250, 252, 0.05) !important; }
+  .bg-\[\#12121208\] { background-color: rgba(248, 250, 252, 0.08) !important; }
+  .bg-\[\#12121210\] { background-color: rgba(248, 250, 252, 0.1) !important; }
+  .bg-\[\#12121215\] { background-color: rgba(248, 250, 252, 0.15) !important; }
+  .bg-\[\#12121220\] { background-color: rgba(248, 250, 252, 0.2) !important; }
+  .bg-\[\#12121225\] { background-color: rgba(248, 250, 252, 0.25) !important; }
+  .bg-\[\#12121230\] { background-color: rgba(248, 250, 252, 0.3) !important; }
+  .bg-\[\#12121240\] { background-color: rgba(248, 250, 252, 0.4) !important; }
+  .bg-\[\#12121250\] { background-color: rgba(248, 250, 252, 0.5) !important; }
+  
+  /* Border opacities */
+  .border-\[\#121212\] { border-color: #334155 !important; }
+  .border-\[\#12121205\] { border-color: rgba(248, 250, 252, 0.05) !important; }
+  .border-\[\#12121208\] { border-color: rgba(248, 250, 252, 0.08) !important; }
+  .border-\[\#12121210\] { border-color: rgba(248, 250, 252, 0.1) !important; }
+  .border-\[\#12121212\] { border-color: rgba(248, 250, 252, 0.12) !important; }
+  .border-\[\#12121215\] { border-color: rgba(248, 250, 252, 0.15) !important; }
+  .border-\[\#12121220\] { border-color: rgba(248, 250, 252, 0.2) !important; }
+  .border-\[\#12121230\] { border-color: rgba(248, 250, 252, 0.3) !important; }
+  
+  .border-\[\#C5A880\] { border-color: #818CF8 !important; }
+  .border-\[\#C5A880\/20\] { border-color: rgba(129, 140, 248, 0.2) !important; }
+  .border-\[\#C5A880\/40\] { border-color: rgba(129, 140, 248, 0.4) !important; }
+  
+  /* Rings and Outlines */
+  .focus\:border-\[\#C5A880\]:focus { border-color: #818CF8 !important; }
+  .focus\:ring-\[\#C5A880\]:focus { --tw-ring-color: #818CF8 !important; }
+  
+  /* Hovers */
+  .hover\:bg-\[\#12121210\]:hover { background-color: rgba(248, 250, 252, 0.1) !important; }
+  .hover\:bg-\[\#12121215\]:hover { background-color: rgba(248, 250, 252, 0.15) !important; }
+  .hover\:border-black:hover { border-color: #F8FAFC !important; }
+  .hover\:border-\[\#121212\]:hover { border-color: #F8FAFC !important; }
+  .hover\:border-\[\#C5A880\]:hover { border-color: #818CF8 !important; }
+  
+  /* Fill and Stroke */
+  .fill-\[\#121212\] { fill: #F8FAFC !important; }
+  .stroke-\[\#121212\] { stroke: #F8FAFC !important; }
+  
+  /* Group Hovers */
+  .group:hover .group-hover\:text-\[\#C5A880\] { color: #818CF8 !important; }
+}
